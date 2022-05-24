@@ -1,11 +1,12 @@
 import Header from './Header';
 import Home from './Home';
-import Benes from './Benes';
-import FeaturedContainer from './FeaturedContainer';
+import About from './About';
+import Blog from './Blog';
 import Slp from './Slp';
 import OfferingForm from './OfferingForm';
 import OfferingEditForm from './OfferingEditForm';
 import OfferingDetail from './OfferingDetail';
+import NotFound from './NotFound';
 import Footer from './Footer';
 import { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
@@ -47,8 +48,12 @@ function Main() {
             <Route exact path="/">
                <Home />
             </Route>
-            <Benes />
-            <FeaturedContainer />
+            <Route exact path="/about">
+               <About />
+            </Route>
+            <Route exact path="/blog">
+               <Blog />
+            </Route>
             <Route path="/offerings/new">
                <OfferingForm onAddOffering={onAddOffering} />
             </Route>
@@ -58,9 +63,11 @@ function Main() {
             <Route path="/offerings/:id">
                <OfferingDetail />
             </Route>
-
             <Route exact path="/offerings">
                <Slp offerings={offerings} />
+            </Route>
+            <Route path="*">
+               <NotFound />
             </Route>
          </Switch>
          <Footer />

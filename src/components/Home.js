@@ -1,8 +1,11 @@
+import Benes from './Benes';
+import FeaturedContainer from './FeaturedContainer';
+
 function Home() {
    return (
       <>
          <div>
-            <h1>Serenity Springs</h1>
+            <h1>Welcome to Serenity Springs</h1>
          </div>
          <div>
             <h3>
@@ -10,6 +13,8 @@ function Home() {
                industry.
             </h3>
          </div>
+         <Benes />
+         <FeaturedContainer />
       </>
    );
 }

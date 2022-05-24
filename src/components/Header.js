@@ -12,6 +12,7 @@ function Header() {
                   alt="company logo, 2 hands lifting long plant leaves"
                />
             </Link>
+            Serenity Springs
             {` `}
             <NavLink to="/offerings">Services</NavLink>
             {` `}

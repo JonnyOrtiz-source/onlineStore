@@ -1,21 +1,16 @@
-function Plp({ offerings }) {
-   const offeringsEl = offerings.map((offering) => {
-      return (
-         <li key={offering.id} onClick={handleClick}>
-            {offering.name} {offering.desc} {offering.price} {offering.image}
-         </li>
-      );
-   });
+import OfferingListItem from './OfferingListItem';
 
-   function handleClick(e) {
-      console.log(e.target);
-   }
+function Slp({ offerings }) {
+   const offeringsEl = offerings.map((offering) => {
+      return <OfferingListItem key={offering.id} offering={offering} />;
+   });
 
    return (
       <div>
+         Services
          <ul>{offeringsEl}</ul>
       </div>
    );
 }
 
-export default Plp;
+export default Slp;
