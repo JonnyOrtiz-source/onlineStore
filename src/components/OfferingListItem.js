@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import OfferingDetail from './OfferingDetail';
+import { Link } from 'react-router-dom';
 
 const OfferingListItem = ({ offering }) => {
    const { id, image, name, desc, price, likes } = offering;
@@ -8,21 +8,21 @@ const OfferingListItem = ({ offering }) => {
 
    const handleLike = (likes) => setLikesCount(likes + 1);
 
-   const handleClick = (e) => {
-      console.log(e.target);
-      <OfferingDetail />;
-   };
-
    return (
-      <li onClick={handleClick}>
-         <h2>{name}</h2>
+      <li>
+         <Link to={`/offerings/${id}`}>
+            <h2>{name}</h2>
+         </Link>
+
          <figure>
             <img src={image} alt={name} />
-            <button onClick={handleLike}>❤️{likesCount}</button>
+            <figcaption>
+               <button onClick={handleLike}>❤️&nbsp;{likesCount}</button>
+            </figcaption>
          </figure>
          <section>
             <p>{desc}</p>
-            <p>{price}</p>
+            <p>{price === 0 ? 'FREE!' : 'price: $' + price}</p>
          </section>
       </li>
    );

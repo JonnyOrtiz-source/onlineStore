@@ -21,11 +21,14 @@ function Header() {
             <NavLink to="/blog">Blog</NavLink>
             {` `}
             <button
-               onClick={(e) => {
-                  console.log(e);
-               }}
+               onClick={() =>
+                  window.open(
+                     'https://calendly.com/yourserenitysprings',
+                     '_blank'
+                  )
+               }
             >
-               Contact Us!
+               Book Now!
             </button>
          </nav>
          <Cart />
