@@ -2,20 +2,22 @@ import Header from './Header';
 import Home from './Home';
 import About from './About';
 import Blog from './Blog';
-import Slp from './Slp';
+import Olp from './Olp';
 import OfferingForm from './OfferingForm';
 import OfferingEditForm from './OfferingEditForm';
 import OfferingDetail from './OfferingDetail';
 import NotFound from './NotFound';
 import Footer from './Footer';
 import { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 
 function Main() {
+   const BASE_URL = 'http://localhost:3001';
    const [offerings, setOfferings] = useState([]);
+   const history = useHistory();
 
    useEffect(() => {
-      fetch('http://localhost:3001/offerings', {
+      fetch(`${BASE_URL}/offerings`, {
          method: 'GET',
          headers: {
             'Content-type': 'application/json',
@@ -41,12 +43,35 @@ function Main() {
       setOfferings(updatedOfferings);
    };
 
+   const handleLikes = (id) => {
+      const foundOffering = offerings.find((offering) => offering.id === id);
+      foundOffering.likes = foundOffering.likes + 1;
+      onUpdateOffering(foundOffering);
+
+      const options = {
+         method: 'PATCH',
+         headers: {
+            'Content-type': 'application/json',
+            Accept: 'application/json',
+         },
+         body: JSON.stringify(foundOffering),
+      };
+
+      fetch(`${BASE_URL}/offerings/${id}`, options)
+         .then((r) => r.json())
+         .then(() => {
+            history.push(`/offerings/`);
+         });
+   };
+
+   const num = Math.floor(Math.random() * (offerings.length - 0) + 1);
+
    return (
       <div>
          <Header />
          <Switch>
             <Route exact path="/">
-               <Home />
+               <Home offerings={offerings} num={num} />
             </Route>
             <Route exact path="/about">
                <About />
@@ -64,8 +89,9 @@ function Main() {
                <OfferingDetail />
             </Route>
             <Route exact path="/offerings">
-               <Slp offerings={offerings} />
+               <Olp offerings={offerings} handleLikes={handleLikes} />
             </Route>
+
             <Route path="*">
                <NotFound />
             </Route>

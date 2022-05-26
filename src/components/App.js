@@ -1,5 +1,7 @@
 import Greeting from './Greeting';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../ssMedia/serenitySpringsLogoNoName.png';
 
 function App() {
    const [errorMessages, setErrorMessages] = useState({});
@@ -22,8 +24,8 @@ function App() {
       pass: 'invalid password',
    };
 
-   const handleSubmit = (event) => {
-      event.preventDefault();
+   const handleSubmit = (e) => {
+      e.preventDefault();
 
       const { uname, pass } = document.forms[0];
 
@@ -44,24 +46,22 @@ function App() {
    };
 
    const renderErrorMessage = (name) =>
-      name === errorMessages.name && (
-         <div className="error">{errorMessages.message}</div>
-      );
+      name === errorMessages.name && <div>{errorMessages.message}</div>;
 
    const renderForm = (
-      <div className="form">
+      <div>
          <form onSubmit={handleSubmit}>
-            <div className="input-container">
+            <div>
                <label>Username </label>
                <input type="text" name="uname" required />
                {renderErrorMessage('uname')}
             </div>
-            <div className="input-container">
+            <div>
                <label>Password </label>
                <input type="password" name="pass" required />
                {renderErrorMessage('pass')}
             </div>
-            <div className="button-container">
+            <div>
                <input type="submit" />
             </div>
          </form>
@@ -69,7 +69,18 @@ function App() {
    );
 
    return (
-      <div>{isSubmitted ? <Greeting isAdmin={isAdmin} /> : renderForm}</div>
+      <>
+         <Link to="/">
+            <img
+               src={logo}
+               alt="company logo, 2 hands lifting long plant leaves"
+            />
+         </Link>
+
+         <h1>Welcome to Serenity Springs</h1>
+
+         <div>{isSubmitted ? <Greeting isAdmin={isAdmin} /> : renderForm}</div>
+      </>
    );
 }
 

@@ -1,124 +1,124 @@
 {
-   "offerings": [
-      {
-         "id": 1,
-         "name": "Sugar Waxing",
-         "price": 20,
-         "desc": "natural waxing method using sugar, honey, and lemon. Offer lip, eyebrows, underarms, legs, arms, and bikini area.",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/sugarwaxing.jpg",
-         "likes": 0,
-         "featured": true,
-         "type": "salon"
-      },
-      {
-         "id": 2,
-         "name": "Manicure",
-         "price": 45,
-         "desc": "regular polish, gel polish, or gel-extensions. Includes sugar scrub, hot towels, and 5 minute massage",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/manicure.jpg",
-         "likes": 0,
-         "featured": false,
-         "type": "salon"
-      },
-      {
-         "id": 3,
-         "name": "Pedicure",
-         "price": 50,
-         "desc": "regular or gel polish. Includes sugar scrub, mask, hot towels, and 10 minute massage",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/pedicure.jpg",
-         "likes": 0,
-         "featured": false,
-         "type": "salon"
-      },
-      {
-         "id": 4,
-         "name": "Haircut",
-         "price": 30,
-         "desc": "haircut and style",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/haircut.jpg",
-         "likes": 0,
-         "featured": false,
-         "type": "salon"
-      },
-      {
-         "id": 5,
-         "name": "Blowout / hot tool styles",
-         "price": 50,
-         "desc": "blow dry with a round brush that makes the hair bouncy and voluminous",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/blowout.jpg",
-         "likes": 0,
-         "featured": false,
-         "type": "salon"
-      },
-      {
-         "id": 6,
-         "name": "Henna Color",
-         "price": 40,
-         "desc": "Henna is a natural alternative to traditional hair color, available in natural hair colors",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/hennaColor.jpg",
-         "likes": 0,
-         "featured": true,
-         "type": "salon"
-      },
-      {
-         "id": 7,
-         "name": "Hair/scalp treatments",
-         "price": 25,
-         "desc": "Hair treatments provided can moisturize, add strength, or treat dry scalp depending on clients needs",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/hairTreatment.jpg",
-         "likes": 0,
-         "featured": true,
-         "type": "salon"
-      },
-      {
-         "id": 8,
-         "name": "Free Wig Installation",
-         "price": 0,
-         "desc": "get your wig on",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/wigs.jpg",
-         "likes": 0,
-         "featured": true,
-         "type": "salon"
-      },
-      {
-         "id": 9,
-         "name": "Swedish Massage, 30 min",
-         "price": 40,
-         "desc": "Relaxes the body and relieves pain in muscles with slow calming strokes",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/swedishMassage.jpg",
-         "likes": 0,
-         "featured": true,
-         "type": "spa"
-      },
-      {
-         "id": 10,
-         "name": "Swedish Massage, 60 min",
-         "price": 80,
-         "desc": "Relaxes the body and relieves pain in muscles with slow calming strokes",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/swedishMassage.jpg",
-         "likes": 0,
-         "featured": true,
-         "type": "spa"
-      },
-      {
-         "id": 11,
-         "name": "Chair Massage, 10 min",
-         "price": 15,
-         "desc": "Done while sitting using compression to relieve tension",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/chairMassage.jpg",
-         "likes": 0,
-         "featured": true,
-         "type": "spa"
-      },
-      {
-         "id": 12,
-         "name": "Chair Massage, 15 min",
-         "price": 20,
-         "desc": "Done while sitting using compression to relieve tension",
-         "image": "https://serenity-springs-assets.s3.amazonaws.com/chairMassage.jpg",
-         "likes": 0,
-         "featured": true,
-         "type": "spa"
-      }
-   ]
+  "offerings": [
+    {
+      "id": 1,
+      "name": "Sugar Waxing",
+      "price": 20,
+      "desc": "natural waxing method using sugar, honey, and lemon. Offer lip, eyebrows, underarms, legs, arms, and bikini area.",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/sugarwaxing.jpg",
+      "likes": 1,
+      "featured": true,
+      "type": "salon"
+    },
+    {
+      "id": 2,
+      "name": "Manicure",
+      "price": 45,
+      "desc": "regular polish, gel polish, or gel-extensions. Includes sugar scrub, hot towels, and 5 minute massage",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/manicure.jpg",
+      "likes": 0,
+      "featured": false,
+      "type": "salon"
+    },
+    {
+      "id": 3,
+      "name": "Pedicure",
+      "price": 50,
+      "desc": "regular or gel polish. Includes sugar scrub, mask, hot towels, and 10 minute massage",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/pedicure.jpg",
+      "likes": 0,
+      "featured": false,
+      "type": "salon"
+    },
+    {
+      "id": 4,
+      "name": "Haircut",
+      "price": 30,
+      "desc": "haircut and style",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/haircut.jpg",
+      "likes": 0,
+      "featured": false,
+      "type": "salon"
+    },
+    {
+      "id": 5,
+      "name": "Blowout / hot tool styles",
+      "price": 50,
+      "desc": "blow dry with a round brush that makes the hair bouncy and voluminous",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/blowout.jpg",
+      "likes": 0,
+      "featured": false,
+      "type": "salon"
+    },
+    {
+      "id": 6,
+      "name": "Henna Color",
+      "price": 40,
+      "desc": "Henna is a natural alternative to traditional hair color, available in natural hair colors",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/hennaColor.jpg",
+      "likes": 0,
+      "featured": true,
+      "type": "salon"
+    },
+    {
+      "id": 7,
+      "name": "Hair/scalp treatments",
+      "price": 25,
+      "desc": "Hair treatments provided can moisturize, add strength, or treat dry scalp depending on clients needs",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/hairTreatment.jpg",
+      "likes": 0,
+      "featured": true,
+      "type": "salon"
+    },
+    {
+      "id": 8,
+      "name": "Free Wig Installation",
+      "price": 0,
+      "desc": "get your wig on",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/wigs.jpg",
+      "likes": 0,
+      "featured": true,
+      "type": "salon"
+    },
+    {
+      "id": 9,
+      "name": "Swedish Massage, 30 min",
+      "price": 40,
+      "desc": "Relaxes the body and relieves pain in muscles with slow calming strokes",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/swedishMassage.jpg",
+      "likes": 0,
+      "featured": true,
+      "type": "spa"
+    },
+    {
+      "id": 10,
+      "name": "Swedish Massage, 60 min",
+      "price": 80,
+      "desc": "Relaxes the body and relieves pain in muscles with slow calming strokes",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/swedishMassage.jpg",
+      "likes": 0,
+      "featured": true,
+      "type": "spa"
+    },
+    {
+      "id": 11,
+      "name": "Chair Massage, 10 min",
+      "price": 15,
+      "desc": "Done while sitting using compression to relieve tension",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/chairMassage.jpg",
+      "likes": 0,
+      "featured": true,
+      "type": "spa"
+    },
+    {
+      "id": 12,
+      "name": "Chair Massage, 15 min",
+      "price": 20,
+      "desc": "Done while sitting using compression to relieve tension",
+      "image": "https://serenity-springs-assets.s3.amazonaws.com/chairMassage.jpg",
+      "likes": 2,
+      "featured": true,
+      "type": "spa"
+    }
+  ]
 }

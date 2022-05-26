@@ -26,10 +26,10 @@ function OfferingDetail({ num }) {
          <section>
             <div>
                <img src={image} alt={desc} />
-               <div>{likes}</div>
+               <div>❤️&nbsp;{likes}</div>
             </div>
             <div>{desc}</div>
-            <div>{price}</div>
+            <div>{price === 0 ? 'FREE!' : 'price: $' + price}</div>
          </section>
       </>
    );

@@ -1,12 +1,7 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const OfferingListItem = ({ offering }) => {
+const OfferingListItem = ({ offering, handleLikes }) => {
    const { id, image, name, desc, price, likes } = offering;
-
-   const [likesCount, setLikesCount] = useState(likes);
-
-   const handleLike = (likes) => setLikesCount(likes + 1);
 
    return (
       <li>
@@ -17,7 +12,7 @@ const OfferingListItem = ({ offering }) => {
          <figure>
             <img src={image} alt={name} />
             <figcaption>
-               <button onClick={handleLike}>❤️&nbsp;{likesCount}</button>
+               <button onClick={() => handleLikes(id)}>❤️&nbsp;{likes}</button>
             </figcaption>
          </figure>
          <section>

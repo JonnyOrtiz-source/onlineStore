@@ -1,18 +1,10 @@
-import logo from '../ssMedia/serenitySpringsLogoNoName.png';
-import Cart from './Cart';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
    return (
       <header>
          <nav>
-            <Link to="/">
-               <img
-                  src={logo}
-                  alt="company logo, 2 hands lifting long plant leaves"
-               />
-            </Link>
-            Serenity Springs
+            <NavLink to="/">Home</NavLink>
             {` `}
             <NavLink to="/offerings">Services</NavLink>
             {` `}
@@ -31,7 +23,6 @@ function Header() {
                Book Now!
             </button>
          </nav>
-         <Cart />
       </header>
    );
 }
