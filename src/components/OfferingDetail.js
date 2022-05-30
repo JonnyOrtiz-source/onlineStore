@@ -18,11 +18,12 @@ function OfferingDetail({ num }) {
 
    if (!isLoaded) return <h2>Loading...</h2>;
 
-   const { name, desc, price, image, likes } = offering;
+   const { name, desc, price, image, likes, type } = offering;
 
    return (
       <>
-         <h1>{name}</h1>
+         <h3>{type.toUpperCase()} SERVICE DETAILS</h3>
+         <h3>{name}</h3>
          <section>
             <div>
                <img src={image} alt={desc} />

@@ -15,7 +15,7 @@ function Olp({ offerings, handleLikes, isAdmin, onUpdateOffering }) {
 
    return (
       <div>
-         Services
+         <h3>Services</h3>
          <ul>{offeringsEl}</ul>
       </div>
    );

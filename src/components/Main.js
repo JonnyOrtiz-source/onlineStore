@@ -63,10 +63,18 @@ function Main({ offerings, setOfferings, history, BASE_URL, isAdmin }) {
                <Blog />
             </Route>
             <Route path="/offerings/new">
-               <OfferingForm onAddOffering={onAddOffering} />
+               <OfferingForm
+                  BASE_URL={BASE_URL}
+                  onAddOffering={onAddOffering}
+                  isAdmin={isAdmin}
+               />
             </Route>
             <Route path="/offerings/:id/edit">
-               <OfferingEditForm onUpdateOffering={onUpdateOffering} />
+               <OfferingEditForm
+                  BASE_URL={BASE_URL}
+                  onUpdateOffering={onUpdateOffering}
+                  isAdmin={isAdmin}
+               />
             </Route>
             <Route path="/offerings/:id">
                <OfferingDetail />
