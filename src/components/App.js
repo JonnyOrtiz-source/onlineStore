@@ -1,12 +1,29 @@
-import Greeting from './Greeting';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Main from './Main';
+
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import logo from '../ssMedia/serenitySpringsLogoNoName.png';
 
 function App() {
    const [errorMessages, setErrorMessages] = useState({});
    const [isSubmitted, setIsSubmitted] = useState(false);
    const [isAdmin, setIsAdmin] = useState(false);
+   const [offerings, setOfferings] = useState([]);
+   const history = useHistory();
+
+   const BASE_URL = 'http://localhost:3001';
+
+   useEffect(() => {
+      fetch(`${BASE_URL}/offerings`, {
+         method: 'GET',
+         headers: {
+            'Content-type': 'application/json',
+            Accept: 'application/json',
+         },
+      })
+         .then((r) => r.json())
+         .then((offerings) => setOfferings(offerings));
+   }, []);
 
    const database = [
       {
@@ -35,10 +52,10 @@ function App() {
          if (userData.password !== pass.value) {
             setErrorMessages({ name: 'pass', message: errors.pass });
          } else {
-            setIsSubmitted(true);
-            if (userData.username === 'admin') {
+            if (userData.username.trim().toLowerCase() === 'admin') {
                setIsAdmin(true);
             }
+            setIsSubmitted(true);
          }
       } else {
          setErrorMessages({ name: 'uname', message: errors.uname });
@@ -46,7 +63,9 @@ function App() {
    };
 
    const renderErrorMessage = (name) =>
-      name === errorMessages.name && <div>{errorMessages.message}</div>;
+      name === errorMessages.name && (
+         <div className="error">{errorMessages.message}</div>
+      );
 
    const renderForm = (
       <div>
@@ -79,7 +98,19 @@ function App() {
 
          <h1>Welcome to Serenity Springs</h1>
 
-         <div>{isSubmitted ? <Greeting isAdmin={isAdmin} /> : renderForm}</div>
+         <div>
+            {isSubmitted ? (
+               <Main
+                  offerings={offerings}
+                  setOfferings={setOfferings}
+                  history={history}
+                  BASE_URL={BASE_URL}
+                  isAdmin={isAdmin}
+               />
+            ) : (
+               renderForm
+            )}
+         </div>
       </>
    );
 }

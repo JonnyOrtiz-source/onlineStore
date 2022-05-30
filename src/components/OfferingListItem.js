@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 
-const OfferingListItem = ({ offering, handleLikes }) => {
+const OfferingListItem = ({
+   offering,
+   handleLikes,
+   isAdmin,
+   onUpdateOffering,
+}) => {
    const { id, image, name, desc, price, likes } = offering;
 
    return (
@@ -13,6 +18,7 @@ const OfferingListItem = ({ offering, handleLikes }) => {
             <img src={image} alt={name} />
             <figcaption>
                <button onClick={() => handleLikes(id)}>❤️&nbsp;{likes}</button>
+               {isAdmin ? <Link to={`/offerings/${id}/edit`}>Edit</Link> : null}
             </figcaption>
          </figure>
          <section>
