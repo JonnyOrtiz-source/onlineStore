@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
-function OfferingDetail({ num }) {
+function OfferingDetail({ num, isAdmin, handleLikes }) {
    const [offering, setOffering] = useState(null);
    const [isLoaded, setIsLoaded] = useState(false);
 
    const { id } = useParams();
+
+   useDocumentTitle('Serenity Springs - Service Detail');
 
    useEffect(() => {
       fetch(`http://localhost:3001/offerings/${id ? id : num}`)
@@ -20,15 +23,24 @@ function OfferingDetail({ num }) {
 
    const { name, desc, price, image, likes, type } = offering;
 
+   const editLink = <Link to={`/offerings/${id}/edit`}>Edit</Link>;
+
    return (
       <>
          <h3>{type.toUpperCase()} SERVICE DETAILS</h3>
          <h3>{name}</h3>
-         <section>
-            <div>
+         <div>
+            <figure>
                <img src={image} alt={desc} />
-               <div>❤️&nbsp;{likes}</div>
-            </div>
+               <figcaption>
+                  <button onClick={() => handleLikes(id)}>
+                     ❤️&nbsp;{likes}
+                  </button>
+                  &nbsp;&nbsp;{isAdmin ? editLink : null}
+               </figcaption>
+            </figure>
+         </div>
+         <section>
             <div>{desc}</div>
             <div>{price === 0 ? 'FREE!' : 'price: $' + price}</div>
          </section>

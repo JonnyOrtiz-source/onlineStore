@@ -26,6 +26,13 @@ function Main({ offerings, setOfferings, history, BASE_URL, isAdmin }) {
       setOfferings(updatedOfferings);
    };
 
+   const onDeleteOffering = (deletedOffering) => {
+      const updatedOfferings = offerings.filter(
+         (offering) => offering.id !== deletedOffering.id
+      );
+      setOfferings(updatedOfferings);
+   };
+
    const handleLikes = (id) => {
       const foundOffering = offerings.find((offering) => offering.id === id);
       foundOffering.likes = foundOffering.likes + 1;
@@ -77,7 +84,7 @@ function Main({ offerings, setOfferings, history, BASE_URL, isAdmin }) {
                />
             </Route>
             <Route path="/offerings/:id">
-               <OfferingDetail />
+               <OfferingDetail handleLikes={handleLikes} isAdmin={isAdmin} />
             </Route>
             <Route exact path="/offerings">
                <Olp
@@ -85,6 +92,8 @@ function Main({ offerings, setOfferings, history, BASE_URL, isAdmin }) {
                   handleLikes={handleLikes}
                   isAdmin={isAdmin}
                   onUpdateOffering={onUpdateOffering}
+                  onDeleteOffering={onDeleteOffering}
+                  BASE_URL={BASE_URL}
                />
             </Route>
 

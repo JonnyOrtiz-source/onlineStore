@@ -1,7 +1,14 @@
 import OfferingListItem from './OfferingListItem';
 import { Link } from 'react-router-dom';
 
-function Olp({ offerings, handleLikes, isAdmin, onUpdateOffering }) {
+function Olp({
+   offerings,
+   handleLikes,
+   isAdmin,
+   onUpdateOffering,
+   onDeleteOffering,
+   BASE_URL,
+}) {
    const offeringsEl = offerings.map((offering) => {
       return (
          <OfferingListItem
@@ -10,6 +17,8 @@ function Olp({ offerings, handleLikes, isAdmin, onUpdateOffering }) {
             handleLikes={handleLikes}
             isAdmin={isAdmin}
             onUpdateOffering={onUpdateOffering}
+            onDeleteOffering={onDeleteOffering}
+            BASE_URL={BASE_URL}
          />
       );
    });

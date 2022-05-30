@@ -1,6 +1,8 @@
-import React from 'react';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 function Blog() {
+   useDocumentTitle('Serenity Springs - Blog');
+
    return (
       <div>
          <h3>BLOG</h3>

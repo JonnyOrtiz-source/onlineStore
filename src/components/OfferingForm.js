@@ -1,5 +1,5 @@
 import { useForm } from '../hooks/useForm';
-
+import { useHistory } from 'react-router-dom';
 function OfferingForm({ BASE_URL, onAddOffering, isAdmin }) {
    const initialData = {
       name: '',
@@ -12,6 +12,8 @@ function OfferingForm({ BASE_URL, onAddOffering, isAdmin }) {
    };
 
    const { formData, setFormData, handleChange } = useForm(initialData);
+
+   const history = useHistory();
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -35,6 +37,7 @@ function OfferingForm({ BASE_URL, onAddOffering, isAdmin }) {
                type: '',
                image: '',
             });
+            history.push(`/offerings/${offering.id}`);
          });
    };
 
