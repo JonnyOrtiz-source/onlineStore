@@ -1,4 +1,5 @@
 import OfferingListItem from './OfferingListItem';
+import { Link } from 'react-router-dom';
 
 function Olp({ offerings, handleLikes, isAdmin, onUpdateOffering }) {
    const offeringsEl = offerings.map((offering) => {
@@ -13,9 +14,12 @@ function Olp({ offerings, handleLikes, isAdmin, onUpdateOffering }) {
       );
    });
 
+   const addLink = <Link to={`/offerings/new`}>Add New Service</Link>;
+
    return (
       <div>
-         <h3>Services</h3>
+         <h3>SERVICES</h3>
+         {isAdmin ? addLink : null}
          <ul>{offeringsEl}</ul>
       </div>
    );

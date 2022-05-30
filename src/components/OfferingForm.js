@@ -75,8 +75,8 @@ function OfferingForm({ BASE_URL, onAddOffering, isAdmin }) {
             value={formData.type}
             onChange={handleChange}
          >
-            <option value="1">salon</option>
-            <option value="2">spa</option>
+            <option value="salon">salon</option>
+            <option value="spa">spa</option>
          </select>
 
          <label htmlFor="image">Image</label>
