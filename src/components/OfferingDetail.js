@@ -33,9 +33,7 @@ function OfferingDetail({ num, isAdmin, handleLikes }) {
             <figure>
                <img src={image} alt={desc} />
                <figcaption>
-                  <button onClick={() => handleLikes(id)}>
-                     ❤️&nbsp;{likes}
-                  </button>
+                  ❤️&nbsp;{likes}
                   &nbsp;&nbsp;{isAdmin ? editLink : null}
                </figcaption>
             </figure>

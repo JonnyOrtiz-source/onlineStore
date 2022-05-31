@@ -82,7 +82,7 @@ function Main({ offerings, setOfferings, history, BASE_URL, isAdmin }) {
                />
             </Route>
             <Route path="/offerings/:id">
-               <OfferingDetail handleLikes={handleLikes} isAdmin={isAdmin} />
+               <OfferingDetail isAdmin={isAdmin} />
             </Route>
             <Route exact path="/offerings">
                <Olp
