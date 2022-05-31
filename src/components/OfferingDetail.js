@@ -23,7 +23,7 @@ function OfferingDetail({ num, isAdmin, handleLikes }) {
 
    const { name, desc, price, image, likes, type } = offering;
 
-   const editLink = <Link to={`/offerings/${id}/edit`}>Edit</Link>;
+   const editLink = <Link to={`/offerings/${id}/edit`}>✎</Link>;
 
    return (
       <>
