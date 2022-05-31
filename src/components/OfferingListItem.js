@@ -37,7 +37,6 @@ const OfferingListItem = ({
             </figcaption>
          </figure>
          <section>
-            <p>{desc}</p>
             <p>{price === 0 ? 'FREE!' : 'price: $' + price}</p>
          </section>
       </li>
