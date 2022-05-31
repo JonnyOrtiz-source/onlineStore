@@ -31,9 +31,9 @@ const OfferingListItem = ({
             <figcaption>
                <button onClick={() => handleLikes(id)}>❤️&nbsp;{likes}</button>
                &nbsp;&nbsp;
-               {isAdmin ? <Link to={`/offerings/${id}/edit`}>Edit</Link> : null}
+               {isAdmin ? <Link to={`/offerings/${id}/edit`}>✎</Link> : null}
                &nbsp;&nbsp;
-               {isAdmin ? <button onClick={handleDelete}>Delete</button> : null}
+               {isAdmin ? <button onClick={handleDelete}>🗑</button> : null}
             </figcaption>
          </figure>
          <section>
