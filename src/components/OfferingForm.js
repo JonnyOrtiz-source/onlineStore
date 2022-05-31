@@ -1,5 +1,6 @@
 import { useForm } from '../hooks/useForm';
 import { useHistory } from 'react-router-dom';
+
 function OfferingForm({ BASE_URL, onAddOffering, isAdmin }) {
    const initialData = {
       name: '',

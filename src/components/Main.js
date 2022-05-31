@@ -54,14 +54,12 @@ function Main({ offerings, setOfferings, history, BASE_URL, isAdmin }) {
          });
    };
 
-   const num = Math.floor(Math.random() * (offerings.length - 0) + 1);
-
    return (
       <div>
          <Header />
          <Switch>
             <Route exact path="/">
-               <Home offerings={offerings} num={num} />
+               <Home offerings={offerings} />
             </Route>
             <Route exact path="/about">
                <About />

@@ -3,25 +3,31 @@ import { NavLink } from 'react-router-dom';
 function Header() {
    return (
       <header>
-         <nav>
-            <NavLink to="/">Home</NavLink>
-            {` `}
-            <NavLink to="/offerings">Services</NavLink>
-            {` `}
-            <NavLink to="/about">About Us</NavLink>
-            {` `}
-            <NavLink to="/blog">Blog</NavLink>
-            {` `}
-            <button
-               onClick={() =>
-                  window.open(
-                     'https://calendly.com/yourserenitysprings',
-                     '_blank'
-                  )
-               }
-            >
-               Book Now!
-            </button>
+         <nav className="navContainer">
+            <div className="navLink">
+               <NavLink to="/">Home</NavLink>
+            </div>
+            <div className="navLink">
+               <NavLink to="/offerings">Services</NavLink>
+            </div>
+            <div className="navLink">
+               <NavLink to="/about">About Us</NavLink>
+            </div>
+            <div className="navLink">
+               <NavLink to="/blog">Blog</NavLink>
+            </div>
+            <div className="navLink">
+               <button
+                  onClick={() =>
+                     window.open(
+                        'https://calendly.com/yourserenitysprings',
+                        '_blank'
+                     )
+                  }
+               >
+                  Book Now!
+               </button>
+            </div>
          </nav>
       </header>
    );

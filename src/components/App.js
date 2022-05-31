@@ -89,15 +89,20 @@ function App() {
 
    return (
       <>
-         <Link to="/">
-            <img
-               src={logo}
-               alt="company logo, 2 hands lifting long plant leaves"
-            />
-         </Link>
+         <div className="header">
+            <div>
+               <Link to="/">
+                  <img
+                     src={logo}
+                     alt="company logo, 2 hands lifting long plant leaves"
+                  />
+               </Link>
+            </div>
 
-         <h1>Welcome to Serenity Springs</h1>
-
+            <div>
+               <h1>Serenity Springs</h1>
+            </div>
+         </div>
          <div>
             {isSubmitted ? (
                <Main
