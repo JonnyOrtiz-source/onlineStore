@@ -4,8 +4,7 @@ function Footer() {
    return (
       <div>
          <Link to="https://cloudrealmllc.com">
-            {' '}
-            &copy;&nbsp;CloudRealm LLC{' '}
+            <p className="copyright">&copy;&nbsp;CloudRealm LLC</p>
          </Link>
       </div>
    );
