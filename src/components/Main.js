@@ -8,9 +8,28 @@ import OfferingEditForm from './OfferingEditForm';
 import OfferingDetail from './OfferingDetail';
 import NotFound from './NotFound';
 import Footer from './Footer';
-import { Switch, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Switch, Route, useHistory } from 'react-router-dom';
 
-function Main({ offerings, setOfferings, history, BASE_URL, isAdmin }) {
+function Main({ isAdmin }) {
+   const BASE_URL = 'http://localhost:3001';
+
+   const [offerings, setOfferings] = useState([]);
+
+   const history = useHistory();
+
+   useEffect(() => {
+      fetch(`${BASE_URL}/offerings`, {
+         method: 'GET',
+         headers: {
+            'Content-type': 'application/json',
+            Accept: 'application/json',
+         },
+      })
+         .then((r) => r.json())
+         .then((offerings) => setOfferings(offerings));
+   }, []);
+
    const onAddOffering = (newOffering) => {
       setOfferings((offerings) => [...offerings, newOffering]);
    };

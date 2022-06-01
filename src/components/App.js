@@ -1,29 +1,12 @@
 import Main from './Main';
-
-import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../ssMedia/serenitySpringsLogoNoName.png';
 
 function App() {
    const [errorMessages, setErrorMessages] = useState({});
    const [isSubmitted, setIsSubmitted] = useState(false);
    const [isAdmin, setIsAdmin] = useState(false);
-   const [offerings, setOfferings] = useState([]);
-   const history = useHistory();
-
-   const BASE_URL = 'http://localhost:3001';
-
-   useEffect(() => {
-      fetch(`${BASE_URL}/offerings`, {
-         method: 'GET',
-         headers: {
-            'Content-type': 'application/json',
-            Accept: 'application/json',
-         },
-      })
-         .then((r) => r.json())
-         .then((offerings) => setOfferings(offerings));
-   }, []);
 
    const database = [
       {
@@ -103,19 +86,7 @@ function App() {
                <h1>Serenity Springs</h1>
             </div>
          </div>
-         <div>
-            {isSubmitted ? (
-               <Main
-                  offerings={offerings}
-                  setOfferings={setOfferings}
-                  history={history}
-                  BASE_URL={BASE_URL}
-                  isAdmin={isAdmin}
-               />
-            ) : (
-               renderForm
-            )}
-         </div>
+         <div>{isSubmitted ? <Main isAdmin={isAdmin} /> : renderForm}</div>
       </>
    );
 }
