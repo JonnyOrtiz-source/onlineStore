@@ -9,7 +9,7 @@ const OfferingListItem = ({
    onDeleteOffering,
    BASE_URL,
 }) => {
-   const { id, image, name, desc, price, likes } = offering;
+   const { id, image, name, price, likes } = offering;
 
    const handleDelete = () => {
       fetch(`${BASE_URL}/offerings/${id}`, {

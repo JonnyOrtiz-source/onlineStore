@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
-function OfferingDetail({ num, isAdmin, handleLikes }) {
+function OfferingDetail({ BASE_URL, isAdmin }) {
    const [offering, setOffering] = useState(null);
    const [isLoaded, setIsLoaded] = useState(false);
 
@@ -11,13 +11,13 @@ function OfferingDetail({ num, isAdmin, handleLikes }) {
    useDocumentTitle('Serenity Springs - Service Detail');
 
    useEffect(() => {
-      fetch(`http://localhost:3001/offerings/${id ? id : num}`)
+      fetch(`${BASE_URL}/offerings/${id}`)
          .then((r) => r.json())
          .then((offering) => {
             setOffering(offering);
             setIsLoaded(true);
          });
-   }, [id, num]);
+   }, [id, BASE_URL]);
 
    if (!isLoaded) return <h2>Loading...</h2>;
 
